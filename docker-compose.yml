@@ -52,5 +52,5 @@ services:
 
 
 volumes:
-  todolist_pgdata:
-  #pgdata:
+  pgdata:
+  #todolist_pgdata:
