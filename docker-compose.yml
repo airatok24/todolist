@@ -43,7 +43,7 @@ services:
     ports:
       - "5433:5432"
     volumes:
-      - todolist_pgdata:/var/lib/postgresql/data
+      - ./pgdata:/var/lib/postgresql/data
     healthcheck:
       test: ["CMD-SHELL", "pg_isready -U ${DB_USER} -d ${DB_NAME}"]
       interval: 5s
@@ -52,5 +52,6 @@ services:
 
 
 volumes:
-  #pgdata:
-  todolist_pgdata:
+  pgdata:
+    #driver: local
+
