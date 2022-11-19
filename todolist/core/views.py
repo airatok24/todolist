@@ -1,11 +1,11 @@
 from django.contrib.auth import login, logout
 from rest_framework import generics, status, permissions
 
-from todolist.core.models import User
-from todolist.core.serializers import CreateUserSerializer, ProfileSerializer, \
+from core.models import User
+from core.serializers import CreateUserSerializer, ProfileSerializer, \
     UpdatePasswordSerializer  # зачем тудулист
 
-from todolist.core.serializers import LoginSerializer  # и тут
+from core.serializers import LoginSerializer  # и тут
 from rest_framework.response import Response
 
 
