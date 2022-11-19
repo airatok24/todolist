@@ -1,9 +1,6 @@
 name: Build and deploy action
 on:
   push:
-    branches:
-      - main
-#      - deploy
 jobs:
   build_and_push:
     runs-on: ubuntu-latest
@@ -23,7 +20,6 @@ jobs:
     env:
       SECRET_KEY: ${{ secrets.SECRET_KEY }}
       DEBUG: ${{ secrets.DEBUG }}
-      #ALLOWED_HOSTS: ${{ secrets.ALLOWED_HOSTS }}
       DB_ENGINE: ${{ secrets.DB_ENGINE }}
       DB_HOST: ${{ secrets.DB_HOST }}
       DB_PORT: ${{ secrets.DB_PORT }}

@@ -9,7 +9,7 @@ services:
       - api
 
   api:
-    image: airatok24/todolist:${GITHUB_REF_NAME}-${GITHUB_RUN_ID}
+    image: anevretdinov/todolist:${GITHUB_REF_NAME}-${GITHUB_RUN_ID}
     depends_on:
       pg:
         condition: service_healthy
@@ -21,7 +21,7 @@ services:
       DB_HOST: pg
 
   migrations:
-    image: airatok24/todolist:${GITHUB_REF_NAME}-${GITHUB_RUN_ID}
+    image: anevretdinov/todolist:${GITHUB_REF_NAME}-${GITHUB_RUN_ID}
     depends_on:
       pg:
         condition: service_healthy
@@ -38,13 +38,13 @@ services:
       POSTGRES_PASSWORD: ${DB_PASSWORD}
       POSTGRES_DB: ${DB_NAME}
     restart: always
-    ports:
-      - "5433:5432"
     volumes:
-      - ./pgdata:/var/lib/postgresql/data
+      - pgdata:/var/lib/postgresql/data
     healthcheck:
       test: [ "CMD-SHELL", "pg_isready -U ${DB_USER} -d ${DB_NAME}" ]
       interval: 5s
       timeout: 5s
       retries: 5
 
+volumes:
+    pgdata:
