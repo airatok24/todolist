@@ -36,7 +36,7 @@ services:
       DB_HOST: pg
     command: python manage.py runbot
     networks:
-      - backend_nw
+      #- backend_nw
 
 
   migrations:
