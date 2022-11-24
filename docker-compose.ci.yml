@@ -31,6 +31,8 @@ services:
       - .env
     environment:
       DB_HOST: pg
+    networks:
+      - backend_nw
 
 
   migrations:
@@ -61,3 +63,7 @@ services:
 
 volumes:
     pgdata:
+
+networks:
+  backend_nw:
+    driver: bridge
