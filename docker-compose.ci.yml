@@ -31,9 +31,7 @@ services:
       - .env
     environment:
       DB_HOST: pg
-    command: python manage.py runbot
-    #networks:
-      #- backend_nw
+
 
   migrations:
     image: anevretdinov/todolist:${GITHUB_REF_NAME}-${GITHUB_RUN_ID}
