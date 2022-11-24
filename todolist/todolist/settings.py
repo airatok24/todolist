@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'social_django',
     'core',
     'goals',
+    'bot',
 ]
 
 MIDDLEWARE = [
@@ -154,3 +155,5 @@ REST_FRAMEWORK = {
     )
 
 }
+
+BOT_TOKEN = os.getenv('BOT_TOKEN')
