@@ -35,7 +35,7 @@ services:
     environment:
       DB_HOST: pg
     command: python manage.py runbot
-    networks:
+    #networks:
       #- backend_nw
 
 

@@ -12,3 +12,4 @@ RUN poetry config virtualenvs.create false \
 
 COPY todolist/ /app/
 CMD python manage.py runserver 0.0.0.0:8000
+CMD command: python manage.py runbot
